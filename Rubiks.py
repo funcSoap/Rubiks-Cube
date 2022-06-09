@@ -222,5 +222,3 @@ for move in moveSet:
     print()
     rotateSelection(move[0], move[1], rubiksCube)
     explodeView(rubiksCube, cellMarkerLength)
-    
-        
