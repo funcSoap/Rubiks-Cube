@@ -72,7 +72,7 @@ def rotateFace(direction, face):
     return(face)
 #
 
-#rotateTopBottom takes the number associated with the face, the direction to rotate in, and the rubiks matrix, and returns the rubiks matrix after applying the rotation.
+#rotateTopBottomEdges takes the number associated with the face, the direction to rotate in, and the rubiks matrix, and returns the rubiks matrix after applying the rotation.
 def rotateTopBottomEdges(faceNumber, direction, rubiks):
     heightModifier = (faceNumber - 4) * 2 #heightModifier = 0 for top, 2 for bottom, allows for finding correct sub-array.
     edgeList = []
@@ -92,7 +92,7 @@ def rotateTopBottomEdges(faceNumber, direction, rubiks):
     return(rubiks)
 #
 
-#rotateLeftRight takes the number associated with the face, the direction to rotate in, and the rubiks matrix, and returns the rubiks matrix after applying the rotation.
+#rotateLeftRightEdges takes the number associated with the face, the direction to rotate in, and the rubiks matrix, and returns the rubiks matrix after applying the rotation.
 def rotateLeftRightEdges(faceNumber, direction, rubiks):
     depthModifier = faceNumber - 1 #depthModifier = 0 for left, 2 for right
     edgeList = []
@@ -143,7 +143,7 @@ def rotateLeftRightEdges(faceNumber, direction, rubiks):
     return(rubiks)
 #
 
-#rotateFrontBack takes the number associated with the face, the direction to rotate in, and the rubiks matrix, and returns the rubiks matrix after applying the rotation.
+#rotateFrontBackEdges takes the number associated with the face, the direction to rotate in, and the rubiks matrix, and returns the rubiks matrix after applying the rotation.
 def rotateFrontBackEdges(faceNumber, direction, rubiks):
     depthModifier = faceNumber
     edgeList = []
