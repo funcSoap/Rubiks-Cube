@@ -97,20 +97,20 @@ def rotateLeftRightEdges(faceNumber, direction, rubiks):
     depthModifier = faceNumber - 1 #depthModifier = 0 for left, 2 for right
     edgeList = []
 
+    column = depthModifier
     for row in range(3):
-        column = depthModifier
         edgeList.append(rubiks[faceF][row][column])
-        
+    
+    column = depthModifier
     for row in range(3):
-        column = depthModifier
         edgeList.append(rubiks[faceD][row][column])
-        
+    
+    column = 2 - depthModifier
     for row in range(2, -1, -1):
-        column = 2 - depthModifier
         edgeList.append(rubiks[faceB][row][column])
-        
+    
+    column = depthModifier
     for row in range(3):
-        column = depthModifier
         edgeList.append(rubiks[faceT][row][column])
             
     #Move 3 end of list to start if clockwise, start of list to end if counterclockwise:
@@ -120,23 +120,23 @@ def rotateLeftRightEdges(faceNumber, direction, rubiks):
 
     #Overwrite the old edges with the rotated edges:
     Counter = 0
+    column = depthModifier
     for row in range(3):
-        column = depthModifier
         rubiks[faceF][row][column] = edgeList[Counter]
         Counter += 1
-        
-    for row in range(3):
-        column = depthModifier
+    
+    column = depthModifier
+    for row in range(3): 
         rubiks[faceD][row][column] = edgeList[Counter]
         Counter += 1
-        
+    
+    column = 2 - depthModifier
     for row in range(2, -1, -1):
-        column = 2 - depthModifier
         rubiks[faceB][row][column] = edgeList[Counter]
         Counter += 1
-        
+    
+    column = depthModifier
     for row in range(3):
-        column = depthModifier
         rubiks[faceT][row][column] = edgeList[Counter]
         Counter += 1
         
@@ -147,21 +147,21 @@ def rotateLeftRightEdges(faceNumber, direction, rubiks):
 def rotateFrontBackEdges(faceNumber, direction, rubiks):
     depthModifier = faceNumber
     edgeList = []
-
+    
+    row = 2 - depthModifier
     for column in range(3):
-        row = 2 - depthModifier
         edgeList.append(rubiks[faceT][row][column])
-        
+    
+    column = depthModifier
     for row in range(3):
-        column = depthModifier
         edgeList.append(rubiks[faceR][row][column])
-        
+    
+    row = depthModifier
     for column in range(2, -1, -1):
-        row = depthModifier
         edgeList.append(rubiks[faceD][row][column])
-        
+    
+    column = 2 - depthModifier
     for row in range(2, -1, -1):
-        column = 2 - depthModifier
         edgeList.append(rubiks[faceL][row][column])
 
     directionModifier = (depthModifier - 1) * (-1) #directionModifier = 1 for front, -1 for back, as edgeList is inverse order for back.
@@ -171,23 +171,23 @@ def rotateFrontBackEdges(faceNumber, direction, rubiks):
     #Overwrite the old edges with the rotated edges:
     counter = 0
     
+    row = 2 - depthModifier
     for column in range(3):
-        row = 2 - depthModifier
         rubiks[faceT][row][column] = edgeList[counter]
         counter += 1
-        
+    
+    column = depthModifier
     for row in range(3):
-        column = depthModifier
         rubiks[faceR][row][column] = edgeList[counter]
         counter += 1
-        
+    
+    row = depthModifier
     for column in range(2, -1, -1):
-        row = depthModifier
         rubiks[faceD][row][column] = edgeList[counter]
         counter += 1
-        
+    
+    column = 2-depthModifier
     for row in range(2, -1, -1):
-        column = 2-depthModifier
         rubiks[faceL][row][column] = edgeList[counter]
         counter += 1
 
