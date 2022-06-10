@@ -23,7 +23,7 @@ def makeTestRubiks():
 #
 
 #explodeView provides an exploded view in console of the current rubiks cube state. Designed for cell markers of uniform size.
-def explodeView(rubiks, cellMarkerLength): #Is it better to pass a global variable into a function or to just leave it global?
+def explodeView(rubiks, cellMarkerLength):
     for row in range(3):
         print("{}{}|{}|{}".format(3*" "*cellMarkerLength+4*" ", rubiks[faceT][row][0], rubiks[faceT][row][1], rubiks[faceT][row][2]))
     print()
@@ -96,7 +96,8 @@ def rotateTopBottomEdges(faceNumber, direction, rubiks):
 def rotateLeftRightEdges(faceNumber, direction, rubiks):
     depthModifier = faceNumber - 1 #depthModifier = 0 for left, 2 for right
     edgeList = []
-
+    
+    #Form edgeList in cyclic order around the edge of the central cell so 'rotating' it is a much easier process.
     column = depthModifier
     for row in range(3):
         edgeList.append(rubiks[faceF][row][column])
@@ -148,6 +149,7 @@ def rotateFrontBackEdges(faceNumber, direction, rubiks):
     depthModifier = faceNumber
     edgeList = []
     
+    #Form edgeList in cyclic order around the edge of the central cell so 'rotating' it is a much easier process.
     row = 2 - depthModifier
     for column in range(3):
         edgeList.append(rubiks[faceT][row][column])
