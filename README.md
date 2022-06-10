@@ -15,3 +15,5 @@ By changing from 'test = False' to 'test = True' and by copying the above moves 
 In total ~10 hrs work.
 
 The colour characters can be changed in 'makeRubiks' to represent the different faces of the Rubik's Cube differently when using the non-test run, and specific cells can be changed in 'makeTestRubiks'. The spacing of the display is determined by the length of the top left cell of the front face however, so the display is designed around all cells being a uniform size.
+
+Written in Anaconda's Spyder.
